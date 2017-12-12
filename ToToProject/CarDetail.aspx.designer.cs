@@ -11,7 +11,7 @@ namespace ToToProject
 {
 
 
-    public partial class MyBets
+    public partial class CarDetail
     {
     }
 }

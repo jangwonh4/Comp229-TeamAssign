@@ -171,7 +171,8 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Assets\Images\TeamLogo.png" />
-    <Content Include="Betting.aspx" />
+    <Content Include="CarDetail.aspx" />
+    <Content Include="CarList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -191,7 +192,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Landing.aspx" />
-    <Content Include="MyBets.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -349,12 +349,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Betting.aspx.cs">
-      <DependentUpon>Betting.aspx</DependentUpon>
+    <Compile Include="CarDetail.aspx.cs">
+      <DependentUpon>CarDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Betting.aspx.designer.cs">
-      <DependentUpon>Betting.aspx</DependentUpon>
+    <Compile Include="CarDetail.aspx.designer.cs">
+      <DependentUpon>CarDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarList.aspx.cs">
+      <DependentUpon>CarList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarList.aspx.designer.cs">
+      <DependentUpon>CarList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -381,13 +388,6 @@
       <DependentUpon>Landing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="MyBets.aspx.cs">
-      <DependentUpon>MyBets.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MyBets.aspx.designer.cs">
-      <DependentUpon>MyBets.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
