@@ -11,7 +11,7 @@ namespace ToToProject
 {
 
 
-    public partial class _Default
+    public partial class Betting
     {
     }
 }

@@ -11,7 +11,7 @@ namespace ToToProject
 {
 
 
-    public partial class About
+    public partial class Customer
     {
     }
 }
