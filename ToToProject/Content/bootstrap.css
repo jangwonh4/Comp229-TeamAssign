@@ -4251,6 +4251,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
+  height : auto;
   position: fixed;
   right: 0;
   left: 0;
@@ -4263,6 +4264,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top {
+  height:70px;
   top: 0;
   border-width: 0 0 1px;
 }
