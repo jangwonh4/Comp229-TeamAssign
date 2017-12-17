@@ -4180,6 +4180,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-collapse {
+  padding-top : 8px;
   text-align : center;
   padding-right: 15px;
   padding-left: 15px;
@@ -4202,7 +4203,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-collapse.collapse {
     display: block !important;
     height: auto !important;
-    padding-bottom: 0;
     overflow: visible !important;
   }
   .navbar-collapse.in {
@@ -4265,6 +4265,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top {
+  padding-top : 10px;
   height:70px;
   top: 0;
   border-width: 0 0 1px;
@@ -4277,7 +4278,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding: 5px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -4324,6 +4325,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
+  padding-top : 8px;
   margin: 7.5px -15px;
 }
 .navbar-nav > li > a {
@@ -4356,6 +4358,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-nav {
+        padding-top : 8px;
     float: left;
     margin: 0;
   }
@@ -4960,10 +4963,8 @@ a.badge:focus {
 }
 .jumbotron {
   padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+  padding-bottom: 10px;
+  height: 280px;
 }
 .jumbotron h1,
 .jumbotron .h1 {

@@ -50,17 +50,16 @@
                         <img class="img-rounded" alt="Brand" src="/Assets/Images/TeamLogo.png" width="70" height="40">
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" style="padding-top:8px">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/">About</a></li>
+                        <li><a runat="server" href="~/About">Car List</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -80,7 +79,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - COMP229 - Team Project</p>
             </footer>
         </div>
     </form>

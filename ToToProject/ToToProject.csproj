@@ -170,6 +170,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Assets\Images\board.gif" />
+    <Content Include="Assets\Images\carImage.gif" />
     <Content Include="Assets\Images\TeamLogo.png" />
     <Content Include="CarDetail.aspx" />
     <Content Include="CarList.aspx" />
