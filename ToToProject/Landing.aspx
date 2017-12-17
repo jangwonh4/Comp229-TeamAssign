@@ -16,35 +16,30 @@
         <div class="col-md-6">
             <h2 style="text-align: center">Available now!</h2>
             <div class="center-block">
-                <center>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
-                <Columns>
-                    <asp:BoundField HeaderText="Student Number" DataField="StudentID" />
-
-                    <asp:HyperLinkField HeaderText="First Name" 
-                        DataTextField="FirstMidName" 
-                        DataNavigateUrlFormatString="Students.aspx?StudentID={0}"
-                        DataNavigateUrlFields="StudentID"
-                        />
+            
+            <asp:GridView ID="GridView1"  CssClass="GridPosition" autogenerateselectbutton="True"  onselectedindexchanged="GridView1_SelectedIndexChanged" 
+             runat="server"  AutoGenerateColumns="False"  Height="173px" HorizontalAlign="Center" Width="600px" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" >
+                
+            <AlternatingRowStyle HorizontalAlign="Center" />
+            <Columns>
+                <asp:BoundField DataField="CarID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True"  />
+                <asp:BoundField DataField="CarModel" HeaderText="Model" />
+                <asp:BoundField DataField="CarYear" HeaderText="Year" />
+                <asp:BoundField DataField="CarDesc" HeaderText="Description" />
+                <asp:BoundField DataField="DatePublished" HeaderText="Date" />
+            </Columns>
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#FFF1D4" />
+                <SortedAscendingHeaderStyle BackColor="#B95C30" />
+                <SortedDescendingCellStyle BackColor="#F1E5CE" />
+                <SortedDescendingHeaderStyle BackColor="#93451F" />
+        </asp:GridView>
                         
-                    <asp:BoundField HeaderText="Last Name" DataField="LastName" />
-                    <asp:TemplateField HeaderText="Enrollment Date">
-                        <ItemTemplate>
-                            <%# ((DateTime)Eval("EnrollmentDate")).ToString("yyyy-MM-dd")%>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-                <FooterStyle BackColor="White" ForeColor="#000066" />
-                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
-                <RowStyle ForeColor="#000066" />
-                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#00547E" />
-            </asp:GridView>
-                        </center>
+                        
 
             </div>
         </div>
@@ -83,4 +78,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>
