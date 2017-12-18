@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace ToToProject
 {
     public partial class Landing : System.Web.UI.Page
@@ -14,7 +15,7 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlCommand comm = new SqlCommand("SELECT * FROM Cars", conn);
+            SqlCommand comm = new SqlCommand("SELECT * FROM Cars WHERE CarStatus = 'In Stock'", conn);
 
             conn.Open();
             SqlDataReader reader = comm.ExecuteReader();

@@ -10,6 +10,8 @@
         </a>
             </center>
     </div>
+    <br />
+    <br />
 
     <div class="row">
         <h1 class="text-center">We offer the best car to you!!</h1>
