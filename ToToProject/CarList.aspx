@@ -10,7 +10,7 @@
 
             <AlternatingRowStyle HorizontalAlign="Center" />
             <Columns>
-                <asp:BoundField DataField="CarID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True" />
+                <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />
                 <asp:BoundField DataField="CarDesc" HeaderText="Description" />
