@@ -17,7 +17,7 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Register_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace ToToProject
 
             {
                 
-                SqlCommand CreateUser = new SqlCommand("INSERT INTO Members(Lname,FName,DateCreated,Username,Email, Password) VALUES(@lastName ,@firstName,GETDATE(),@username,@email, @pwd)", conn);
+                SqlCommand CreateUser = new SqlCommand("INSERT INTO Customer(Lname,FName,DateCreated,Username,Email, Password) VALUES(@lastName ,@firstName,GETDATE(),@username,@email, @pwd)", conn);
 
                 String lastName = lastNameTB.Text;
                 String firstName = firstNameTB.Text;
@@ -45,7 +45,7 @@ namespace ToToProject
 
                     conn.Open();
                     CreateUser.ExecuteNonQuery();
-                    WarningLbl.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                    WarningLbl.Text = DateTime.Now.ToString("Type This way ( yyyy-MM-dd )");
                 }
                 
                 catch (Exception exception)
@@ -54,15 +54,15 @@ namespace ToToProject
                 }
                 finally
                 {
+                    
                     conn.Close();
                 }
 
             }
         }
-
+        //Check user name and id and login
         protected void Login_Click(object sender, EventArgs e)
-        {
-            //Check user name and id and login            
+        {                        
             SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
             SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
 
@@ -71,7 +71,6 @@ namespace ToToProject
 
             checkPassword.Parameters.Add("@username", SqlDbType.NVarChar);
             checkPassword.Parameters["@username"].Value = loginUsernameTB.Text;
-
             try
             {
                 conn.Open();

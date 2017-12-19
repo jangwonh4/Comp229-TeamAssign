@@ -37,4 +37,22 @@
         <asp:Button CssClass="btn" runat="server" Text="Login" Onclick="Login_Click" />
         <asp:Label runat="server" ID="WarningLblLogin"></asp:Label>
     </div>
+
+    <h1>User List</h1>
+    <div class ="divBody small">
+    <p>             
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="userlistsql" Width="265px" AllowPaging="True">
+            <Columns>
+               
+               
+                <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
+               
+               
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="userlistsql" runat="server"
+                     ConnectionString="<%$ ConnectionStrings:Comp229TeamProjectConnectionString %>" 
+                    SelectCommand="SELECT [Username] FROM [Customer]"></asp:SqlDataSource>
+    </p>
+        </div>
 </asp:Content>

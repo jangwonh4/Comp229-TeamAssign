@@ -20,7 +20,7 @@
             <div class="center-block">
             
             <asp:GridView ID="GridView1"  CssClass="GridPosition" autogenerateselectbutton="True"  onselectedindexchanged="GridView1_SelectedIndexChanged" 
-             runat="server"  AutoGenerateColumns="False"  Height="173px" HorizontalAlign="Center" Width="600px" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" >
+             runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" >
                 
             <AlternatingRowStyle HorizontalAlign="Center" />
             <Columns>
@@ -32,7 +32,7 @@
             </Columns>
                 <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                 <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
-                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+                <PagerStyle ForeColor="#8C4510" HorizontalAlign="Left" />
                 <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                 <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#FFF1D4" />
