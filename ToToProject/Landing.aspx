@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-md-6">
-            <div class="col-md-6 divBody heightRegistration" id="loginDiv">
+            <div class="col-md-6 divBody heightRegistration" >
         <h2>Login</h2>
         <table class="tableFillout">
         <tr><td>Username:</td><td> <asp:TextBox runat="server" ID="txtUser" Placeholder="User Name"></asp:TextBox>
