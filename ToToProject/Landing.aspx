@@ -16,7 +16,7 @@
     <div class="row">
         <h1 class="text-center">We offer the best car to you!!</h1>
         <div class="col-md-6">
-            <h2 style="text-align: center">Available now!</h2>
+            <h2 style="text-align: center">Available now!</h2>  
             <div class="center-block">
             
             <asp:GridView ID="GridView1"  CssClass="GridPosition" autogenerateselectbutton="True"  onselectedindexchanged="GridView1_SelectedIndexChanged" 
@@ -24,7 +24,7 @@
                 
             <AlternatingRowStyle HorizontalAlign="Center" />
             <Columns>
-                <asp:BoundField DataField="CarID" HeaderText="StudentID" InsertVisible="False" ReadOnly="True"  />
+                <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True"  />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />
                 <asp:BoundField DataField="CarDesc" HeaderText="Description" />
@@ -47,38 +47,21 @@
         </div>
 
         <div class="col-md-6">
-            <h2 style="text-align: center">Sign-In</h2>
-            <br />
+            <div class="col-md-6 divBody heightRegistration" id="loginDiv">
+        <h2>Login</h2>
+        <table class="tableFillout">
+        <tr><td>Username:</td><td> <asp:TextBox runat="server" ID="txtUser" Placeholder="User Name"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="loginUsernameTB" Display="Dynamic" ValidationGroup="login" ErrorMessage="Username is Required."></asp:RequiredFieldValidator>
+                              </td></tr>
 
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">ID</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <tr><td>Password:</td><td> <asp:TextBox runat="server" ID="txtPass" TextMode="Password" Placeholder="Password"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" ControlToValidate="loginPasswordTB" Display="Dynamic" ValidationGroup="login" ErrorMessage="Password is Required."></asp:RequiredFieldValidator>
+                              </td></tr>
+            </table>
+        <br />
+        <asp:Button ID="btnlogin" runat="server" Text="Login" OnClick="btnlogin_Click" />
+        <asp:Label runat="server" ID="WarningLblLogin"></asp:Label>
+    </div>
+    </div>
     </div>
 </asp:Content>

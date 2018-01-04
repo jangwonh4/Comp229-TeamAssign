@@ -32,5 +32,23 @@ namespace ToToProject
             string CAR = row.Cells[1].Text;
             Response.Redirect("CarList.aspx?Name=" + CAR);
         }
+
+        protected void btnlogin_Click(object sender, EventArgs e)
+        {
+            string query = "select count(*) from Customer where Username='" + txtUser.Text + "' and pass='" + txtPass.Text + "' ";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            string output = cmd.ExecuteScalar().ToString();
+
+            if(output=="1")
+            {
+                //create a sesstion
+                Session["user"] = txtUser.Text;
+                Response.Write("Log in");
+            }
+            else
+            {
+                Response.Write("Login Faild");
+            }
+        }
     }
 }

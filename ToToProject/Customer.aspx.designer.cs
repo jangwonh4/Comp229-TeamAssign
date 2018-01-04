@@ -76,33 +76,6 @@ namespace ToToProject {
         protected global::System.Web.UI.WebControls.Label WarningLbl;
         
         /// <summary>
-        /// loginUsernameTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox loginUsernameTB;
-        
-        /// <summary>
-        /// loginPasswordTB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox loginPasswordTB;
-        
-        /// <summary>
-        /// WarningLblLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label WarningLblLogin;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
