@@ -30,46 +30,7 @@ namespace ToToProject
             conn.Close();
         }
 
-        protected void addbtn_Click(object sender, EventArgs e)
-        {
-            //add a car 
-            String Name = null;
-            String Description = null;
-            String Date = null;
-           
-            SqlCommand addgame = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, CarDesc,DatePublished) VALUES(@name, @desc, @date)", conn);//not finished yet
-
-            Name = namebx.Text;
-            Description = descbx.Text;
-            Date = Convert.ToString(Calendar1.SelectedDate);
-            try
-            {
-                //not finished yet
-                addgame.Parameters.AddWithValue("@name", Name);
-                addgame.Parameters.AddWithValue("@desc", Description);
-                addgame.Parameters.AddWithValue("@date", Date);
-                conn.Open();
-                addgame.ExecuteNonQuery();
-                Response.Redirect(Request.RawUrl);
-            }
-
-            finally
-            {
-
-                conn.Close();
-
-
-            }
-            //    }
-            // }
-
-        }
-
-        protected void showdivbtn_Click(object sender, EventArgs e)
-        {
-            //turn on div to let any user add a game
-            editdiv.Visible = true;
-            editbtndiv.Visible = false;
-        }
+        
+        
     }
 }

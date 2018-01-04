@@ -59,50 +59,8 @@ namespace ToToProject
                 }
 
             }
-        }
-        //Check user name and id and login
-        protected void Login_Click(object sender, EventArgs e)
-        {                        
-            SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
-            SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
-
-            checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
-            checkUser.Parameters["@username"].Value = loginUsernameTB.Text;
-
-            checkPassword.Parameters.Add("@username", SqlDbType.NVarChar);
-            checkPassword.Parameters["@username"].Value = loginUsernameTB.Text;
-            try
-            {
-                conn.Open();
-                string username = checkUser.ExecuteScalar().ToString();
-
-                if (username != null && String.Equals(username, loginUsernameTB.Text))
-                {
-                    string password = checkPassword.ExecuteScalar().ToString();
-
-                    if (password != null && String.Equals(password, loginPasswordTB.Text))
-                    {
-                        FormsAuthentication.SetAuthCookie(username, true);
-                        Response.Redirect("~/Pages/LandingPage.aspx");
-
-                    }
-                }
-                else
-                {
-                    WarningLblLogin.Text = "There is No username";
-                }
-
-            }
-            catch (Exception exception)
-            {
-                WarningLblLogin.Text = exception.Message.ToString();
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-
+        
+        
         }
     }
 }
