@@ -16,7 +16,7 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            bool isAuthenticated = (HttpContext.Current.User != null) && HttpContext.Current.User.Identity.IsAuthenticated;
             SqlCommand comm = new SqlCommand("SELECT * FROM Cars WHERE CarStatus = 'In Stock'", conn);
 
             conn.Open();
@@ -25,6 +25,16 @@ namespace ToToProject
             GridView1.DataBind();
             reader.Close();
             conn.Close();
+
+            if (Session["User"] != null)
+            {
+                nologin.Visible = false;
+            }
+
+            if (isAuthenticated==true)
+            {
+                nologin.Visible = false;
+            }
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -39,14 +49,15 @@ namespace ToToProject
         {
             /*Check user credentical and login*/
 
-            SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Members WHERE Username = @username", conn);
-            SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Members WHERE Username = @username", conn);
+            SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
+            SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Customer WHERE Username = @username", conn);
 
             checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
             checkUser.Parameters["@username"].Value = loginUsernameTB.Text;
 
             checkPassword.Parameters.Add("@username", SqlDbType.NVarChar);
             checkPassword.Parameters["@username"].Value = loginUsernameTB.Text;
+            
 
             try
             {
@@ -60,12 +71,15 @@ namespace ToToProject
                     if (password != null && String.Equals(password, loginPasswordTB.Text))
                     {
                         FormsAuthentication.SetAuthCookie(username, true);
-                        Response.Redirect("~/Pages/Homepage.aspx");
+                        nologin.Visible = false;
+                        Session["User"] = loginUsernameTB.Text;
+                        //Response.Redirect("~/Landing.aspx");                     
 
-                   }
+                    }
+                    
                 }
-               else
-               {
+                else
+                {
                     WarningLblLogin.Text = "No username was found";
                 }
 
@@ -76,10 +90,10 @@ namespace ToToProject
             }
             finally
             {
-               conn.Close();
+                conn.Close();
             }
 
 
-         }
+        }
     }
 }

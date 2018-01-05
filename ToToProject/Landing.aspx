@@ -4,10 +4,8 @@
 
     <div class="jumbotron" style="background-color: #ffffff; height: 280px;">
         <center>
-        <a href="">
             <img class="img-rounded" width="500px" src="/Assets/Images/carImage.gif" />
             <img class="img-rounded" height="259px" src="/Assets/Images/board.gif" />
-        </a>
             </center>
     </div>
     <br />
@@ -27,9 +25,8 @@
                 <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True"  />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />
-                <asp:BoundField DataField="Price" HeaderText="Price" />
                 <asp:BoundField DataField="CarDesc" HeaderText="Description" />
-               
+                <asp:BoundField DataField="DatePublished" HeaderText="Date" />
             </Columns>
                 <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                 <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
@@ -47,6 +44,13 @@
      
         <div class="col-md-6">
             <div class="col-md-6 divBody heightRegistration" id="loginDiv">
+
+
+
+                   
+        <div id="nologin" runat="server" visible="true">
+
+                     
         <h2>Login</h2>
         <table class="tableFillout">
         <tr><td>Username:</td><td> <asp:TextBox runat="server" ID="loginUsernameTB"></asp:TextBox>
@@ -60,6 +64,10 @@
         <br />
         <asp:Button CssClass="btn" runat="server" Text="Login" ID="btnLogin" OnClick="Login_Click"/>
         <asp:Label runat="server" ID="WarningLblLogin"></asp:Label>
+            
+
+  
+                </div>
     </div>
     </div> 
         
