@@ -26,7 +26,7 @@ namespace ToToProject
             String CarDesc = null;
             String Date = null;
 
-            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, CarDesc, CarDesc,DatePublished) VALUES(@name, @year, @CarDesc, @date)", conn);//not finished yet
+            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, NumberOfUsers, CarDesc,DatePublished) VALUES(@name, @year,0, @CarDesc, @date)", conn);//not finished yet
 
             Name = namebox.Text;
             Year = yearbox.Text;
@@ -39,7 +39,7 @@ namespace ToToProject
                 addCars.Parameters.AddWithValue("@name", Name);
                 addCars.Parameters.AddWithValue("@year", Year);
                 addCars.Parameters.AddWithValue("@date", Date);
-                addCars.Parameters.AddWithValue("@desc", CarDesc);
+                addCars.Parameters.AddWithValue("@Cardesc", CarDesc);
                 conn.Open();
                 addCars.ExecuteNonQuery();
                 Response.Redirect(Request.RawUrl);
