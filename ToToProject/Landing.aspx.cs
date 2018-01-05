@@ -42,7 +42,7 @@ namespace ToToProject
 
             GridViewRow row = GridView1.SelectedRow;
             string CAR = row.Cells[1].Text;
-            Response.Redirect("CarList.aspx?Name=" + CAR);
+            Response.Redirect("CarDetail.aspx?Name=" + CAR);
         }
 
         protected void Login_Click(object sender, EventArgs e)

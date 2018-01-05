@@ -14,14 +14,26 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            DisplayData();
+            //Empty field should should be hidden
+            if (String.IsNullOrEmpty(Request["Name"]))
+            {
+                Response.Write("Wrong request");
+                Response.End();
+            }
+            else
+            {
+                DisplayData();
+
+            }
+
         }
 
         private void DisplayData()
         {
-            
-            SqlCommand comm = new SqlCommand("SELECT * FROM Cars", conn);
-
+            int CarID = Convert.ToInt32(Request.QueryString["Name"]);
+            SqlCommand comm = new SqlCommand("SELECT * FROM Cars where CarID = @CarID", conn);
+            comm.Parameters.Add("@CarID", System.Data.SqlDbType.Int);
+            comm.Parameters["@CarID"].Value = CarID;
             conn.Open();
             SqlDataReader reader = comm.ExecuteReader();
             GridView2.DataSource = reader;
@@ -30,7 +42,33 @@ namespace ToToProject
             conn.Close();
         }
 
-        
-        
+
+        // Rent a Car button
+        protected void Rent_Click(object sender, EventArgs e)
+        {
+            String DateS = null;
+            String DateE = null;
+            SqlCommand RentACar = new SqlCommand("INSERT INTO CarLine(DateStart, DateEnd) VALUES(@dateS, @dateE)", conn);
+
+            //select date in the tables
+            DateS = Convert.ToString(Calendar1.SelectedDate);
+            DateE = Convert.ToString(Calendar2.SelectedDate);
+            try
+            {
+                RentACar.Parameters.AddWithValue("@dateS", DateS);
+                RentACar.Parameters.AddWithValue("@dateE", DateE);
+                conn.Open();
+                RentACar.ExecuteNonQuery();
+                Response.Redirect(Request.RawUrl);
+            }
+
+            finally
+            {
+
+                conn.Close();
+
+
+            }
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace ToToProject
 
             GridViewRow row = GridView2.SelectedRow;
             string CAR = row.Cells[1].Text;
-            Response.Redirect("CarList.aspx?Name=" + CAR);
+            Response.Redirect("CarDetail.aspx?Name=" + CAR);
         }
 
     }
