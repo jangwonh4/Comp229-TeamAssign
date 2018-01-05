@@ -13,8 +13,13 @@ namespace ToToProject
     public partial class CarList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {               
-             DisplayData(); 
+        {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("~/Customer.aspx");
+            }
+
+            DisplayData(); 
         }
 
         private void DisplayData()

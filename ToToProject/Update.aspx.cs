@@ -15,7 +15,10 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["User"] == null)
+            {
+                Response.Redirect("~/Customer.aspx");
+            }
 
         }
         //Add a car button ( in the database )
