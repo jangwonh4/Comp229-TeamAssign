@@ -49,6 +49,15 @@ namespace ToToProject {
         protected global::System.Web.UI.WebControls.TextBox yearbox;
         
         /// <summary>
+        /// pricebox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox pricebox;
+        
+        /// <summary>
         /// descbox control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace ToToProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox descbox;
-        
-        /// <summary>
-        /// Calendar1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// btnAdd control.

@@ -19,7 +19,7 @@ namespace ToToProject
 
             if (!isAuthenticated)
             {
-                Response.Redirect("~/Customer.aspx");
+                Response.Redirect("~/CarList.aspx");
             }
             else
             { DisplayData(); }

@@ -27,8 +27,9 @@
                 <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True"  />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />
+                <asp:BoundField DataField="Price" HeaderText="Price" />
                 <asp:BoundField DataField="CarDesc" HeaderText="Description" />
-                <asp:BoundField DataField="DatePublished" HeaderText="Date" />
+               
             </Columns>
                 <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
                 <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />

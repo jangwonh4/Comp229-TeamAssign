@@ -23,22 +23,24 @@ namespace ToToProject
             //add a car 
             String Name = null;
             String Year = null;
+            String Price = null;
             String CarDesc = null;
-            String Date = null;
+            
 
-            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, NumberOfUsers, CarDesc,DatePublished) VALUES(@name, @year,0, @CarDesc, @date)", conn);//not finished yet
+            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, Price, CarDesc,DatePublished) VALUES(@name, @year,0, @price, @date)", conn);//not finished yet
 
             Name = namebox.Text;
             Year = yearbox.Text;
+            Price = pricebox.Text;
             CarDesc = descbox.Text;
-            Date = Convert.ToString(Calendar1.SelectedDate);
+            //Date = Convert.ToString(Calendar1.SelectedDate);
 
             try
             {
                 //not finished yet
                 addCars.Parameters.AddWithValue("@name", Name);
                 addCars.Parameters.AddWithValue("@year", Year);
-                addCars.Parameters.AddWithValue("@date", Date);
+                addCars.Parameters.AddWithValue("@price", Price);
                 addCars.Parameters.AddWithValue("@Cardesc", CarDesc);
                 conn.Open();
                 addCars.ExecuteNonQuery();
