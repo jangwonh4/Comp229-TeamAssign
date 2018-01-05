@@ -41,11 +41,9 @@
                 <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
                         
-                        
-
-            </div>
+                                    </div>
         </div>
-        <!--
+     
         <div class="col-md-6">
             <div class="col-md-6 divBody heightRegistration" id="loginDiv">
         <h2>Login</h2>
@@ -59,10 +57,10 @@
                               </td></tr>
             </table>
         <br />
-        <asp:Button CssClass="btn" runat="server" Text="Login" Onclick="Login_Click" />
+        <asp:Button CssClass="btn" runat="server" Text="Login" ID="btnLogin" OnClick="Login_Click"/>
         <asp:Label runat="server" ID="WarningLblLogin"></asp:Label>
     </div>
     </div> 
-            -->
+        
 </div>
 </asp:Content>

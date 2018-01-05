@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="ToToProject.Update" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div ID="editbtndiv" runat="server" class ="divBody" visible="true">
-            <asp:Button ID="showdivbtn" runat="server" Text="Add a Car" OnClick="showdivbtn_Click" />
         </div>
-        <div ID="editdiv" runat="server" class ="divBody" visible="false">
+        <div ID="editdiv" runat="server" class ="divBody" visible="true">
         <p>Add Car</p>
         <p>Car Name:<asp:TextBox ID="namebox" runat="server"></asp:TextBox>
         <p>Year:<asp:TextBox ID="yearbox" runat="server"></asp:TextBox>
@@ -22,7 +21,7 @@
             </asp:Calendar>
         </p>
         <p>
-            <asp:Button ID="addbtn" runat="server" OnClick="addbtn_Click" Text="Add Car" />
+            <asp:Button CssClass="btn" ID="btnAdd" runat="server" OnClick="addbtn_Click" Text="Add Car" />
         </p>
             </div>
 </asp:Content>

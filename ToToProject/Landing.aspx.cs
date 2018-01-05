@@ -35,51 +35,51 @@ namespace ToToProject
             Response.Redirect("CarList.aspx?Name=" + CAR);
         }
 
-        //protected void Login_Click(object sender, EventArgs e)
-        //{
-        //    /*Check user credentical and login*/
+        protected void Login_Click(object sender, EventArgs e)
+        {
+            /*Check user credentical and login*/
 
-        //    SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Members WHERE Username = @username", conn);
-        //    SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Members WHERE Username = @username", conn);
+            SqlCommand checkUser = new SqlCommand("Select Username FROM CarRental.[dbo].Members WHERE Username = @username", conn);
+            SqlCommand checkPassword = new SqlCommand("Select Password FROM CarRental.[dbo].Members WHERE Username = @username", conn);
 
-        //    checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
-        //    checkUser.Parameters["@username"].Value = loginUsernameTB.Text;
+            checkUser.Parameters.Add("@username", SqlDbType.NVarChar);
+            checkUser.Parameters["@username"].Value = loginUsernameTB.Text;
 
-        //    checkPassword.Parameters.Add("@username", SqlDbType.NVarChar);
-        //    checkPassword.Parameters["@username"].Value = loginUsernameTB.Text;
+            checkPassword.Parameters.Add("@username", SqlDbType.NVarChar);
+            checkPassword.Parameters["@username"].Value = loginUsernameTB.Text;
 
-        //    try
-        //    {
-        //        connection.Open();
-        //        string username = checkUser.ExecuteScalar().ToString();
+            try
+            {
+                conn.Open();
+                string username = checkUser.ExecuteScalar().ToString();
 
-        //        if (username != null && String.Equals(username, loginUsernameTB.Text))
-        //        {
-        //            string password = checkPassword.ExecuteScalar().ToString();
+                if (username != null && String.Equals(username, loginUsernameTB.Text))
+                {
+                    string password = checkPassword.ExecuteScalar().ToString();
 
-        //            if (password != null && String.Equals(password, loginPasswordTB.Text))
-        //            {
-        //                FormsAuthentication.SetAuthCookie(username, true);
-        //                Response.Redirect("~/Pages/Homepage.aspx");
+                    if (password != null && String.Equals(password, loginPasswordTB.Text))
+                    {
+                        FormsAuthentication.SetAuthCookie(username, true);
+                        Response.Redirect("~/Pages/Homepage.aspx");
 
-        //            }
-        //        }
-        //        else
-        //        {
-        //            WarningLblLogin.Text = "No username was found";
-        //        }
+                   }
+                }
+               else
+               {
+                    WarningLblLogin.Text = "No username was found";
+                }
 
-        //    }
-        //    catch (Exception exception)
-        //    {
-        //        WarningLblLogin.Text = exception.Message.ToString();
-        //    }
-        //    finally
-        //    {
-        //        connection.Close();
-        //    }
+            }
+            catch (Exception exception)
+            {
+                WarningLblLogin.Text = exception.Message.ToString();
+            }
+            finally
+            {
+               conn.Close();
+            }
 
 
-        // }
+         }
     }
 }
