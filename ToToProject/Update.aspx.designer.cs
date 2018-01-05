@@ -13,13 +13,13 @@ namespace ToToProject {
     public partial class Update {
         
         /// <summary>
-        /// editbtndiv control.
+        /// Complete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editbtndiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Complete;
         
         /// <summary>
         /// editdiv control.

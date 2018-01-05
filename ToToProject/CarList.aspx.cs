@@ -13,16 +13,8 @@ namespace ToToProject
     public partial class CarList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   
-            //can work for authentication, not authenticated.
-            bool isAuthenticated = (HttpContext.Current.User != null) && HttpContext.Current.User.Identity.IsAuthenticated;
-
-            if (!isAuthenticated)
-            {
-                Response.Redirect("~/CarList.aspx");
-            }
-            else
-            { DisplayData(); }
+        {               
+             DisplayData(); 
         }
 
         private void DisplayData()

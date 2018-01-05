@@ -15,11 +15,13 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
-
+        //Add a car button ( in the database )
         protected void addbtn_Click(object sender, EventArgs e)
         {
+            Complete.Visible = true;
             //add a car 
             String Name = null;
             String Year = null;
@@ -27,7 +29,7 @@ namespace ToToProject
             String CarDesc = null;
             
 
-            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, Price, CarDesc,DatePublished) VALUES(@name, @year,0, @price, @date)", conn);//not finished yet
+            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, Price, CarDesc) VALUES(@name, @year, @price, @CarDesc)", conn);
 
             Name = namebox.Text;
             Year = yearbox.Text;
@@ -35,26 +37,22 @@ namespace ToToProject
             CarDesc = descbox.Text;
             //Date = Convert.ToString(Calendar1.SelectedDate);
 
-            try
-            {
-                //not finished yet
-                addCars.Parameters.AddWithValue("@name", Name);
-                addCars.Parameters.AddWithValue("@year", Year);
-                addCars.Parameters.AddWithValue("@price", Price);
-                addCars.Parameters.AddWithValue("@Cardesc", CarDesc);
-                conn.Open();
-                addCars.ExecuteNonQuery();
-                Response.Redirect(Request.RawUrl);
-            }
+   
+            addCars.Parameters.AddWithValue("@name", Name);
+            addCars.Parameters.AddWithValue("@year", Year);
+            addCars.Parameters.AddWithValue("@price", Price);
+            addCars.Parameters.AddWithValue("@Cardesc", CarDesc);
+            conn.Open();
+            addCars.ExecuteNonQuery();
+            Response.Redirect(Request.RawUrl);
 
-            finally
-            {
+          
 
-                conn.Close();
+            
+            conn.Close();
+            
 
-
-            }
-
+      
 
         }
 
