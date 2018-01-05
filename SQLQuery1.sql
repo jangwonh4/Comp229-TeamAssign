@@ -28,7 +28,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE CarRental.[dbo].[CarLine](
    [CarLineID] [int] IDENTITY (10, 1) NOT NULL,
-   [CarModel] [varchar](50) NOT NULL UNIQUE,
+   [DateStart] [date] NOT NULL,
+   [DateEnd] [date] NOT NULL,
    [CustomerID] [int] NOT NULL,
    [CarID] [int] NOT NULL,
  CONSTRAINT [PK_CarLine] PRIMARY KEY CLUSTERED 
@@ -48,9 +49,9 @@ CREATE TABLE CarRental.[dbo].[Cars](
    [CarID] [int] IDENTITY (10, 1) NOT NULL,
    [CarModel] [varchar](50) NOT NULL,
    [CarYear] [int] NOT NULL,
-   [NumberOfUsers] [int] NOT NULL DEFAULT 0,
+   [Price] [int] NOT NULL DEFAULT 0,
    [CarDesc] [varchar](300) NOT NULL,
-   [DatePublished] [date] NOT NULL,
+   
  CONSTRAINT [PK_CarID] PRIMARY KEY CLUSTERED 
 (
    [CarID] ASC
@@ -72,12 +73,12 @@ ALTER TABLE CarRental.[dbo].CarLine
 ADD CONSTRAINT FK_CarLine_CustomerID FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 
 --Cars
-INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc, DatePublished)
-VALUES ('Porshe', '2016' , 'No accident', '2016-10-10')
-INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc, DatePublished)
-VALUES ('Macan', '2017' , 'No accident', '2017-10-10')
-INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc, DatePublished)
-VALUES ('Civic', '2013' , 'No accident', '2017-10-10')
+INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc)
+VALUES ('Porshe', '2016' , 'No accident')
+INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc)
+VALUES ('Macan', '2017' , 'No accident')
+INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear ,CarDesc)
+VALUES ('Civic', '2013' , 'No accident')
 
 
 --Customer
