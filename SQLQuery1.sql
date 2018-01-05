@@ -13,7 +13,7 @@ CREATE TABLE CarRental.[dbo].[Customer](
    [Email] [nvarchar](30) NOT NULL UNIQUE, 
    [Password] [nvarchar](20) NOT NULL,
    [Admin] [CHAR](1) default 'n'NOT NULL
- CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_Member] PRIMARY KEY CLUSTERED 
 (
    [CustomerID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -51,6 +51,7 @@ CREATE TABLE CarRental.[dbo].[Cars](
    [CarYear] [int] NOT NULL,
    [Price] [int] NOT NULL DEFAULT 0,
    [CarDesc] [varchar](300) NOT NULL,
+   [CarStatus] [varchar](20) NOT NULL,
    
  CONSTRAINT [PK_CarID] PRIMARY KEY CLUSTERED 
 (
@@ -79,16 +80,15 @@ INSERT INTO CarRental.[dbo].Customer(Lname,FName,DateCreated,Username,Email, Pas
 VALUES ('Mingi','Jang',GETDATE(),'Ricter','jangwonh4@gmail.com', '123', 'y');
 
 
---ALTER TABLE dbo.Cars ADD CarStatus varchar(20)
---Cars
+
 INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc, CarStatus)
-VALUES ('Accord', '2013',10  , 'No accident', 'In Stock')
-INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc,  CarStatus)
-VALUES ('G70', '2017',10  , 'No accident', 'Sold Out')
+VALUES ('Accord', '2013' ,10, 'No accident', 'In Stock')
 INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc, CarStatus)
-VALUES ('Range rover evoque', '2016',10  , 'No accident', 'In Stock')
-INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc,  CarStatus)
-VALUES ('McLaren', '2017',101 , 'No accident', 'In Stock')
+VALUES ('G70', '2017',10 , 'No accident', 'Sold Out')
+INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc, CarStatus)
+VALUES ('Range rover evoque',10, '2016' , 'No accident', 'In Stock')
+INSERT INTO CarRental.[dbo].Cars(CarModel,CarYear,Price ,CarDesc, CarStatus)
+VALUES ('McLaren', '2017' ,10, 'No accident', 'In Stock')
 
 UPDATE dbo.Cars  
     SET CarStatus = 'Sold Out'  
