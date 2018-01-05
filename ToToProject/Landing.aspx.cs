@@ -70,10 +70,10 @@ namespace ToToProject
 
                     if (password != null && String.Equals(password, loginPasswordTB.Text))
                     {
-                        FormsAuthentication.SetAuthCookie(username, true);
+                        FormsAuthentication.SetAuthCookie(username, false);
                         nologin.Visible = false;
                         Session["User"] = loginUsernameTB.Text;
-                        //Response.Redirect("~/Landing.aspx");                     
+                        Response.Redirect("~/Landing.aspx");                     
 
                     }
                     

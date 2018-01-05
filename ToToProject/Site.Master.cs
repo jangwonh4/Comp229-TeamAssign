@@ -18,6 +18,11 @@ namespace ToToProject
 
         protected void Page_Init(object sender, EventArgs e)
         {
+            if (Session["User"] != null)
+            {
+                LoginYet.Visible = false;
+                LoggedIn.Visible = true;
+            }
             // The code below helps to protect against XSRF attacks
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
@@ -50,6 +55,8 @@ namespace ToToProject
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
         {
+
+
             if (!IsPostBack)
             {
                 // Set Anti-XSRF token
@@ -70,7 +77,19 @@ namespace ToToProject
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["User"] != null)
+            {
+                LoginYet.Visible = false;
+                LoggedIn.Visible = true;
+            }
         }
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Response.Redirect("~/Landing.aspx");
+        }
+
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
