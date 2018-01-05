@@ -41,15 +41,18 @@
                 <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
                         
+                                    
+                        
                                     </div>
         </div>
      
         <div class="col-md-6">
             <div class="col-md-6 divBody heightRegistration" id="loginDiv">
 
-
-
-                   
+                <div id="login" runat="server" visible="false">
+                    <h1>Welcome</h1>
+                    <p>User : <asp:Label ID="Username" runat="server" Text="Label" BackColor="Red"></asp:Label></p>
+                   </div>
         <div id="nologin" runat="server" visible="true">
 
                      

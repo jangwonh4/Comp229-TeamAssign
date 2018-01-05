@@ -14,11 +14,15 @@ namespace ToToProject
     public partial class Landing : System.Web.UI.Page
     {
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             bool isAuthenticated = (HttpContext.Current.User != null) && HttpContext.Current.User.Identity.IsAuthenticated;
             SqlCommand comm = new SqlCommand("SELECT * FROM Cars WHERE CarStatus = 'In Stock'", conn);
+            SqlCommand com = new SqlCommand("SELECT * FROM Customer", conn);
 
+            
             conn.Open();
             SqlDataReader reader = comm.ExecuteReader();
             GridView1.DataSource = reader;
@@ -29,6 +33,8 @@ namespace ToToProject
             if (Session["User"] != null)
             {
                 nologin.Visible = false;
+                Username.Text = (string)(Session["User"]);
+                login.Visible = true;
             }
 
             if (isAuthenticated==true)
