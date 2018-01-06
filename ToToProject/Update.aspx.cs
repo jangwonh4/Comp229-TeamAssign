@@ -32,7 +32,7 @@ namespace ToToProject
             String CarDesc = null;
             
 
-            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, Price, CarDesc) VALUES(@name, @year, @price, @CarDesc)", conn);
+            SqlCommand addCars = new SqlCommand("INSERT INTO Cars(CarModel, CarYear, Price, CarDesc, CarStatus) VALUES(@name, @year, @price, @CarDesc,'In Stock')", conn);
 
             Name = namebox.Text;
             Year = yearbox.Text;
