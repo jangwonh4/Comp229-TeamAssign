@@ -77,6 +77,7 @@ namespace ToToProject
 
             DateS = Convert.ToString(Calendar1.SelectedDate);
             DateE = Convert.ToString(Calendar2.SelectedDate);
+
             try
             {
                 RentACar.Parameters.AddWithValue("@dateS", DateS);
@@ -94,7 +95,7 @@ namespace ToToProject
             {
 
                 conn.Close();
-
+                Response.Redirect("~/MyBooking.aspx");
 
             }
         }
