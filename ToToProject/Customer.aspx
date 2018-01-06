@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="ToToProject.Customer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <p>1</p>
+    <p></p>
+    <div class="alert alert-warning" style="text-align: center">
+                    <strong>You can access to the site after Log in</strong>
+                </div>
     <div class="col-md-6 divBody heightRegistration" id="registerDiv">
         <h2>Register for an account</h2>
         <table class="tableFillout">

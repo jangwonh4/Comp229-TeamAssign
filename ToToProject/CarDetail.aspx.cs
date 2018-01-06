@@ -14,6 +14,11 @@ namespace ToToProject
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Comp229TeamProjectConnectionString"].ToString());
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["User"] == null)
+            {
+                Response.Redirect("~/Customer.aspx");
+            }
+
             //Empty field should should be hidden
             if (String.IsNullOrEmpty(Request["Name"]))
             {

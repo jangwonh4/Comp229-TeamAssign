@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CarDetail.aspx.cs" Inherits="ToToProject.CarDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="center-block">
+    <div class="center-block" style="text-align: center">
 
         <asp:GridView ID="GridView2" CssClass="GridPosition" 
             runat="server" AutoGenerateColumns="False" Height="173px" HorizontalAlign="Center" Width="600px" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2">
 
-            <AlternatingRowStyle HorizontalAlign="Center" />
+            <AlternatingRowStyle HorizontalAlign="left" />
             <Columns>
                 <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
@@ -26,31 +26,37 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
         </asp:GridView>
 
-        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
-            <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
-            <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-            <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
-            <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
-            <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-            <WeekendDayStyle BackColor="#CCCCFF" />
+       <div style="width:200px;margin-left:auto;margin-right:auto">
+
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" Width="220px" DayNameFormat="Shortest" ShowGridLines="True">
+            <DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
+            <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+            <OtherMonthDayStyle ForeColor="#CC9966" />
+            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+            <SelectorStyle BackColor="#FFCC66" />
+            <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+            <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
             </asp:Calendar>
 
-        <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
-            <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
-            <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-            <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
-            <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
-            <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-            <WeekendDayStyle BackColor="#CCCCFF" />
+        
+       
+
+        <asp:Calendar ID="Calendar2" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" Width="220px" DayNameFormat="Shortest" ShowGridLines="True">
+            <DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
+            <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+            <OtherMonthDayStyle ForeColor="#CC9966" />
+            <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+            <SelectorStyle BackColor="#FFCC66" />
+            <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+            <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
             </asp:Calendar>
+
+
+ 
 
 
         <asp:Button ID="Rent" runat="server" Text="Rent a Car" OnClick="Rent_Click" />
     </div>
 
-     
+     </div>
 </asp:Content>

@@ -5,11 +5,12 @@
     <br />
     <div class="center-block">
 
-        <asp:GridView ID="GridView2" CssClass="GridPosition" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView2_SelectedIndexChanged"
+        <asp:GridView ID="GridView2" CssClass="GridPosition" OnSelectedIndexChanged="GridView2_SelectedIndexChanged"
             runat="server" AutoGenerateColumns="False" Height="173px" HorizontalAlign="Center" Width="600px" CellPadding="3" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2">
 
-            <AlternatingRowStyle HorizontalAlign="Center" />
+            <AlternatingRowStyle HorizontalAlign="left" />
             <Columns>
+                <asp:CommandField SelectText="Rent and detail" ShowSelectButton="True" />
                 <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />

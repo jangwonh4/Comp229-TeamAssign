@@ -173,6 +173,7 @@
     <Content Include="Assets\Images\board.gif" />
     <Content Include="Assets\Images\carImage.gif" />
     <Content Include="Assets\Images\TeamLogo.png" />
+    <Content Include="Assets\Style.css" />
     <Content Include="CarDetail.aspx" />
     <Content Include="CarList.aspx" />
     <Content Include="Contact.aspx" />
@@ -431,8 +432,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\NBAImages\" />
-    <Folder Include="Assets\NHLImages\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

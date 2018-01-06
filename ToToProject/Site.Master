@@ -37,6 +37,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <link rel="stylesheet" href="Assets/Style.css" type="text/css" media="screen" />  
 
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">

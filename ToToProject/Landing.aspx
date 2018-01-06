@@ -17,15 +17,16 @@
             <h2 style="text-align: center">Available now!</h2>  
             <div class="center-block">
             
-            <asp:GridView ID="GridView1"  CssClass="GridPosition" autogenerateselectbutton="True"  onselectedindexchanged="GridView1_SelectedIndexChanged" 
-             runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" >
+            <asp:GridView ID="GridView1"  CssClass="GridPosition"  onselectedindexchanged="GridView1_SelectedIndexChanged" 
+             runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="507px"  SelectText="Rent"  >
                 
-            <AlternatingRowStyle HorizontalAlign="Center" />
+            <AlternatingRowStyle HorizontalAlign="left" />
             <Columns>
+                <asp:CommandField SelectText="Rent and detail" ShowSelectButton="True" />
                 <asp:BoundField DataField="CarID" HeaderText="CarID" InsertVisible="False" ReadOnly="True"  />
                 <asp:BoundField DataField="CarModel" HeaderText="Model" />
                 <asp:BoundField DataField="CarYear" HeaderText="Year" />
-               <asp:BoundField DataField="Price" HeaderText="Date" />
+                <asp:BoundField DataField="Price" HeaderText="Price" />
                 <asp:BoundField DataField="CarDesc" HeaderText="Description" />
                 
                 
